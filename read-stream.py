@@ -3,6 +3,7 @@ import datetime
 import cv2
 import numpy as np
 import sys
+import time
 
 c = Consumer({'group.id': 'mygroup',
               'default.topic.config': {'auto.offset.reset': 'earliest'}})
