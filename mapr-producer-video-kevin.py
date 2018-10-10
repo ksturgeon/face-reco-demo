@@ -24,6 +24,7 @@ while (cap.isOpened):
         break
     p.produce('topic1', jpeg.tostring(), str(cap.get(cv2.CAP_PROP_POS_MSEC)))
     print("video position: "+str(cap.get(cv2.CAP_PROP_POS_MSEC))+"ms")
+    sleep(2)
 
 p.flush()
 cap.release()
