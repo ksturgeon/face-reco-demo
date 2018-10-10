@@ -1,4 +1,5 @@
-from mapr_streams_python import Producer
+#from mapr_streams_python import Producer
+from confluent_kafka import Producer
 import numpy as np
 import cv2,time
 import sys
