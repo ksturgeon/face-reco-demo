@@ -5,6 +5,9 @@ import numpy as np
 import sys
 import time
 
+fpath = raw_input("file path [/tmp]:")
+if len(fpath) == 0:
+  fpath = '/tmp'
 c = Consumer({'group.id': 'mygroup',
               'default.topic.config': {'auto.offset.reset': 'earliest'}})
 c.subscribe(['/demo-stream:topic1'])
@@ -15,7 +18,7 @@ while running:
   if not msg.error():
     print('\n')
     print('*****Received message at: '+ str(datetime.datetime.fromtimestamp(msg.timestamp()[1] / 1e3)))
-    with open('/tmp/cap_'+ str(time.time())+'.jpg','w') as file:
+    with open(fpath+'/cap_'+ str(time.time())+'.jpg','w') as file:
       file.write(msg.value())
   elif msg.error().code() != KafkaError._PARTITION_EOF:
     print(msg.error())
