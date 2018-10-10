@@ -16,7 +16,7 @@ while running:
     print('\n')
     print('*****Received message at: '+ str(datetime.datetime.fromtimestamp(msg.timestamp()[1] / 1e3)))
     with open('/tmp/cap_'+ str(time.time())+'.jpg','w'):
-      file.write(np.fromstring(msg.value(), np.uint8))
+      file.write(msg.value())
   elif msg.error().code() != KafkaError._PARTITION_EOF:
     print(msg.error())
     running = False
