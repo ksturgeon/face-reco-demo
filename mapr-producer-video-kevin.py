@@ -19,7 +19,7 @@ while (cap.isOpened):
     image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     ret, jpeg = cv2.imencode('.png', image)
     # Display the resulting frame
-    cv2.imshow('frame',frame)
+    #cv2.imshow('frame',frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
     p.produce('topic1', jpeg.tostring(), str(cap.get(cv2.CAP_PROP_POS_MSEC)))
