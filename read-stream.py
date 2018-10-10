@@ -1,9 +1,12 @@
 from confluent_kafka import Consumer, KafkaError
+import os
 import datetime
 import cv2
 import numpy as np
 import sys
 import time
+
+os.environ['LD_LIBRARY_PATH'] = "$LD_LIBRARY_PATH:/opt/mapr/lib:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/"
 
 fpath = raw_input("file path [/tmp]:")
 if len(fpath) == 0:
