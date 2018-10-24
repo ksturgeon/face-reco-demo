@@ -3,7 +3,7 @@ Provides a similar demonstration to Ian Downard’s Facial Recognition post in b
 * It requires GPUs due to the mxnet/tensorflow/CUDA libraries used.
 * It requires the web capture client run inside a container, inside of a Linux VM on the user’s laptop due to device mapping limitations with Docker for Mac.
 
-**App Lariat Demo ([http://git.se.corp.maprtech.com/ksturgeon/cv-demo](http://git.se.corp.maprtech.com/ksturgeon/cv-demo))**
+**This Demo**
 Consists of four major components;
 
 **1. Client.**  The client runs a small python script (capture-camera-to-dag-db.py) that;
@@ -41,10 +41,10 @@ Captures webcam (either built in or USB web camera) frames at a given rate (defa
 * In the XQuartz Terminal window, type ```xhost +```.  You must do this every time you restart XQuartz.
 
 **Clone the cv-demo project to your laptop.**
-* ```git clone http://git.se.corp.maprtech.com/ksturgeon/cv-demo.git ```
+* ```git clone https://github.com/ksturgeon/face-reco-demo.git ```
 
 ### Demo Process:###
-1. Deploy “Facial Recognition demo” Demo environment.  This should set up the cluster, and launch the image processor and viewer scripts in the background.
+1. Deploy Project to a Cluster Node or Cluster Edge Node. ```git clone https://github.com/ksturgeon/face-reco-demo.git ```
 2. When the deployment starts, open a **browser** to the new “edge” host:5010, in a new tab - it should open to a blank page and just “spin” waiting for data.
 3. Make note/copy the FQDN of the “dag” component (should be “dag-XXXXXX.se.corp.maprtech.com”) in App Lariat.
 4. Run the “capture-camera-to-dag-db.py” script (```python capture-camera-to-dag.py```).  Answer the following questions;
