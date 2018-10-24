@@ -43,7 +43,7 @@ Captures webcam (either built in or USB web camera) frames at a given rate (defa
 **Clone the cv-demo project to your laptop.**
 * ```git clone https://github.com/ksturgeon/face-reco-demo.git ```
 
-### Demo Process:###
+### Demo Process ###
 1. Deploy Project to a Cluster Node or Cluster Edge Node. ```git clone https://github.com/ksturgeon/face-reco-demo.git ```
 2. When the cluster is up and running, run ```./setup-demo.sh``` as user mapr.
 3. Make note/copy the FQDN of the “Data Access Gatewat” service in the Cluster.
@@ -57,11 +57,11 @@ Captures webcam (either built in or USB web camera) frames at a given rate (defa
 
 <img src="https://github.com/ksturgeon/face-reco-demo/blob/master/taskbar.png" width="200" />
 <img src="https://github.com/ksturgeon/face-reco-demo/blob/master/cap_face.png" width="200" />
-* By clicking on the browser that is open to port 5010, you can see the processed image.  Play with depth of field (seems to work better with smaller faces - so pull back from the webcam or move the webcam around), but you can get it to work decently  well.
+* By clicking on the browser that is open to port 5010 on the Edge Node (or node where the "myflask" script is running), you can see the processed image.  Play with depth of field (seems to work better with smaller faces - so pull back from the webcam or move the webcam around), but you can get it to work decently  well.
 
 <img src="https://github.com/ksturgeon/face-reco-demo/blob/master/found_face.png" width="200" />
 
-### Caveats:###
+### Caveats ###
 * I haven’t tested this for longevity.  It is possible that you will run out of space in the stream, cluster, or get too far behind.  To be safe, run the capture script (on your mac) only when you’re ready to show it, or slow down the capture rate.
 * One of these days, I’ll persist the small amount of metadata (or use a better image recognition/cv routine) to get better metadata into another DB table, so you can show queries like “How many ppl in the room” - or maybe do something slick like identify attention on the screen (eye recog) or some such.  Even though the data is in the processed stream, it’s not being used.
 * This departs from the “official” demo since it doesn’t run the capture or the viewer in their own containers.  There’s nothing that would prevent you from doing so - could use a PACC image or a lightweight client one like here - [https://hub.docker.com/r/ksturgeon/mapr-dag-python-client/](https://hub.docker.com/r/ksturgeon/mapr-dag-python-client/)
