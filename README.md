@@ -57,6 +57,7 @@ Captures webcam (either built in or USB web camera) frames at a given rate (defa
 
 <img src="https://github.com/ksturgeon/face-reco-demo/blob/master/taskbar.png" width="200" />
 <img src="https://github.com/ksturgeon/face-reco-demo/blob/master/cap_face.png" width="200" />
+
 * By clicking on the browser that is open to port 5010 on the Edge Node (or node where the "myflask" script is running), you can see the processed image.  Play with depth of field (seems to work better with smaller faces - so pull back from the webcam or move the webcam around), but you can get it to work decently  well.
 
 <img src="https://github.com/ksturgeon/face-reco-demo/blob/master/found_face.png" width="200" />
